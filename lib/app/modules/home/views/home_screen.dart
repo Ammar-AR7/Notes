@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  final VoidCallback change_theme;
-  HomeScreen({required this.change_theme});
+  final VoidCallback? change_theme;
+  HomeScreen({this.change_theme});
 
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+
 
 class AppThemes {
   static const Color primary = Color(0xFF1E3A8A);
   static const Color primaryDark = Color(0xFF0F172A);
-  static final ThemeData Light = ThemeData(
+  static final ThemeData light = ThemeData(
     colorScheme: ColorScheme.fromSwatch(
       brightness: Brightness.light,
       accentColor: primary,
@@ -26,7 +27,7 @@ class AppThemes {
     
   );
 
-  static final ThemeData Dark = ThemeData(
+  static final ThemeData dark = ThemeData(
     colorScheme: ColorScheme.fromSwatch(
       brightness: Brightness.dark,
       accentColor: primaryDark,
@@ -48,4 +49,17 @@ class AppThemes {
     ),
     
   );
+}
+
+class ThemeController extends GetxController{
+  bool isDark = true;
+  void toggleTheme(){
+    isDark = !isDark;
+
+    Get.changeThemeMode(isDark ? ThemeMode.dark : ThemeMode.light);
+
+    update();
+  }
+
+
 }
